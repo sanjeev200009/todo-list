@@ -1,0 +1,14 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <shape android:shape="ring">
+            <solid android:color="#000000" /> <!-- Light Gray for Background -->
+            <stroke android:width="8dp" android:color="#D3D3D3" />
+        </shape>
+    </item>
+    <item android:id="@android:id/progress">
+        <shape android:shape="ring">
+            <solid android:color="#FFFFFF" /> <!-- White for Progress Bar -->
+            <stroke android:width="8dp" android:color="#FFFFFF" />
+        </shape>
+    </item>
+</layer-list>
