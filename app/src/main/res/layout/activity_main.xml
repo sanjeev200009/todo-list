@@ -10,8 +10,6 @@
     android:background="#ADEFFF"
     tools:context=".MainActivity"
     android:id="@+id/main">
-
-
     <!-- Let's Start Button -->
 
     <ImageView
@@ -50,13 +48,11 @@
         android:id="@+id/startButton"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:background="@drawable/rounded_button"
+        android:background="@drawable/button"
         android:elevation="4dp"
         android:gravity="center"
         android:text="Let’s Start"
-        android:textColor="#FFFFFF"
+        android:textColor="#0D0000"
         android:textStyle="bold"
         android:fontFamily="@font/font1" />
-
-
 </LinearLayout>

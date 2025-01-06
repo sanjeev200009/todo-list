@@ -1,0 +1,6 @@
+<!-- res/drawable/card_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/white" />
+    <corners android:radius="12dp" />
+    <shadowColor android:color="@color/gray" />
+</shape>

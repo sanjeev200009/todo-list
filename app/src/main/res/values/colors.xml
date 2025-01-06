@@ -4,5 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="primary_text_color">#0A0A0A</color>
     <color name="gray">#808080</color>
-    <color name="purple">#A020F0</color>
+    <color name="light_gray">#D3D3D3</color>
+    <color name="blue">#5F33E1FF</color>
+    <color name="red">#FF0000</color>
+
 </resources>

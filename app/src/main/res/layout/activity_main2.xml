@@ -30,11 +30,11 @@
                 android:id="@+id/user_greeting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/profile_image"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="8dp"
-                android:text="Hello!\nSanjeev"
+                android:layout_toEndOf="@id/profile_image"
                 android:fontFamily="@font/font2"
+                android:text="Hello!\nSanjeev"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
@@ -43,15 +43,15 @@
                 android:id="@+id/notification_icon"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
                 android:src="@drawable/ic_notification" />
         </RelativeLayout>
 
         <!-- Progress Card -->
         <LinearLayout
             android:layout_width="400dp"
-            android:layout_height="210dp"
+            android:layout_height="220dp"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
             android:background="@drawable/rounded_background_purple"
@@ -65,11 +65,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:layout_marginBottom="8dp"
-                android:text="Your today's task almost done!"
                 android:fontFamily="@font/font2"
+                android:paddingLeft="70dp"
+                android:text="Your today's task almost done!"
                 android:textColor="@color/white"
-                android:textSize="18sp"
-                android:paddingLeft="70dp"/>
+                android:textSize="18sp" />
 
             <!-- Circular Progress Bar -->
             <RelativeLayout
@@ -81,177 +81,417 @@
                     android:id="@+id/progress_circle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:indeterminate="false"
-                    android:progressDrawable="@drawable/circular_progress"
+                    android:max="50"
                     android:progress="85"
-                    android:max="100"
-                    android:layout_gravity="center" />
+                    android:progressDrawable="@drawable/circular_progress" />
 
                 <!-- Percentage Text -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
+                    android:fontFamily="sans-serif-medium"
                     android:text="85%"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:fontFamily="sans-serif-medium" />
+                    android:textSize="18sp" />
             </RelativeLayout>
 
             <!-- View Task Button -->
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:background="@drawable/button_background_white"
-                android:text="View Task"
-                android:textColor="@color/white"
-                android:textSize="16sp"
+                android:id="@+id/taskbutton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/button"
                 android:fontFamily="@font/font2"
-                android:paddingHorizontal="16dp" />
+                android:gravity="center"
+                android:text="View Task"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
         </LinearLayout>
-
 
         <!-- In Progress Section -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="In Progress"
-            android:paddingLeft="10dp"
-            android:textStyle="bold"
             android:layout_marginStart="8dp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/font2"
-            android:textSize="16dp"
             android:layout_marginTop="24dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/font2"
+            android:paddingLeft="10dp"
+            android:text="In Progress"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
+        <!-- In Progress List -->
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="17dp"
+                android:orientation="horizontal">
 
-            <!-- Task Card 1 -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_weight="1"
-                android:background="@drawable/rounded_background_light"
-                android:padding="12dp">
+                <!-- Task Card 1 -->
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="120dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/rounded_background_light"
+                    android:orientation="vertical"
+                    android:padding="8dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Grocery shopping app design"
-                    android:textColor="@color/black"
-                    android:textSize="12sp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/font2"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="Office Project"
+                            android:textColor="@color/black" />
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginBottom="10dp"
+                            android:src="@drawable/icc_add" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="25dp"
+                        android:fontFamily="@font/font2"
+                        android:gravity="start"
+                        android:text="Grocery shopping app design"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
+                <!-- Task Card 2 -->
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="120dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/rounded_background_light_2"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/font2"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="Office Project"
+                            android:textColor="@color/black" />
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginBottom="10dp"
+                            android:src="@drawable/icc_add" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="25dp"
+                        android:fontFamily="@font/font2"
+                        android:gravity="start"
+                        android:text="Grocery shopping app design"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="120dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/rounded_background_light_3"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/font2"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="Office Project"
+                            android:textColor="@color/black" />
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginBottom="10dp"
+                            android:src="@drawable/icc_add" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="25dp"
+                        android:fontFamily="@font/font2"
+                        android:gravity="start"
+                        android:text="Grocery shopping app design"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
             </LinearLayout>
 
-            <!-- Task Card 2 -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_weight="1"
-                android:background="@drawable/rounded_background_light_red"
-                android:padding="12dp"
-                android:layout_marginStart="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Uber Eats redesign challenge"
-                    android:textColor="@color/black"
-                    android:textSize="12sp"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- Task Groups -->
+        <!-- task Group Section -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/font2"
+            android:paddingLeft="10dp"
             android:text="Task Groups"
             android:textColor="@color/black"
+            android:textSize="16dp"
             android:textStyle="bold" />
 
-        <!-- Task Progress List -->
+        <!-- Task Group List -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:elevation="4dp"
+            android:layout_margin="10dp"
+            android:clipToPadding="false">
 
-            <!-- Office Project -->
+            <!-- Task 1: -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="12dp">
-
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:background="@drawable/card_background"
+                android:elevation="4dp"
+                android:layout_marginBottom="8dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Office Project"
-                    android:textColor="@color/black"/>
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/font1"
+                    android:textColor="@color/black" />
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <!-- Task 1: -->
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="70%"
-                    android:layout_gravity="end"
-                    android:textColor="@color/gray"
-                    android:layout_weight="1"/>
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingTop="8dp">
+
+                    <ProgressBar
+                        android:layout_width="0dp"
+                        android:layout_height="8dp"
+                        android:layout_weight="1"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:progress="70"
+                        android:progressTint="@color/blue"
+                        android:backgroundTint="@color/light_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="70%"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray" />
+                </LinearLayout>
             </LinearLayout>
 
-            <!-- Personal Project -->
+            <!-- Task 2: -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="12dp">
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:background="@drawable/card_background"
+                android:elevation="4dp"
+                android:layout_marginBottom="8dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Personal Project"
-                    android:textColor="@color/black"/>
+                    android:fontFamily="@font/font1"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black" />
 
-                <TextView
-                    android:layout_width="wrap_content"
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="52%"
-                    android:layout_gravity="end"
-                    android:textColor="@color/gray"
-                    android:layout_weight="1"/>
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingTop="8dp">
+
+                    <ProgressBar
+                        android:layout_width="0dp"
+                        android:layout_height="8dp"
+                        android:layout_weight="1"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:progress="52"
+                        android:progressTint="@color/blue"
+                        android:backgroundTint="@color/light_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="52%"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray" />
+                </LinearLayout>
             </LinearLayout>
 
-            <!-- Daily Study -->
+            <!-- Task 3: -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="12dp">
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:background="@drawable/card_background"
+                android:elevation="4dp"
+                android:layout_marginBottom="8dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Daily Study"
-                    android:textColor="@color/black"/>
+                    android:fontFamily="@font/font1"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black" />
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="87%"
-                    android:layout_gravity="end"
-                    android:textColor="@color/gray"
-                    android:layout_weight="1"/>
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingTop="8dp">
+
+                    <ProgressBar
+                        android:layout_width="0dp"
+                        android:layout_height="8dp"
+                        android:layout_weight="1"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:progress="87"
+                        android:progressTint="@color/blue"
+                        android:backgroundTint="@color/light_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="87%"
+                        android:textSize="14sp"
+                        android:textColor="@color/gray" />
+                </LinearLayout>
             </LinearLayout>
+
         </LinearLayout>
 
-        <!-- Bottom Add Button -->
-        <ImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/icc_add" />
+        <!-- under taskbar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_undertaskbar"
+            android:gravity="center_vertical"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_home" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_calendar" />
+
+            <ImageView
+                android:id="@+id/addbutton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_plus" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:src="@drawable/users" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_people" />
+
+        </LinearLayout>
+
     </LinearLayout>
+
+
 </ScrollView>
